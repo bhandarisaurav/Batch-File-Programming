@@ -1,4 +1,5 @@
 @echo off
 :loop
-Md %random%
-Goto loop
+cls
+md %random%
+goto loop

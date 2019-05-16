@@ -1,7 +1,9 @@
 @echo off
 setlocal EnableDelayedExpansion
-pushd "E:\utorrents\.watching"
-FOR %%G IN (*.mkv) DO (
+set /p extension=Enter the Extension of Video Files:
+set /p path=Enter the path of Video Files:
+pushd "%path%"
+FOR %%G IN (*.%extension%) DO (
   FOR /F "tokens=1 delims=." %%a IN ("%%G") do (
     set "outFolder=%%a"
     for /D %%i in (*.*) do (
@@ -14,4 +16,3 @@ FOR %%G IN (*.mkv) DO (
   )
 )
 popd
-pause
